@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Wedding Invitation – Alifa & Akbar</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- EB Garamond: angka & huruf seragam ukurannya, menggantikan Cormorant Garamond -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- DESKTOP BLOCKER -->
+    <div id="desktop-blocker">
+      <div class="blocker-inner">
+        <div class="blocker-icon">💌</div>
+        <h2>Undangan Pernikahan</h2>
+        <p>
+          Halaman ini hanya dapat diakses melalui
+          <strong>perangkat HP / smartphone</strong>.
+        </p>
+        <p class="sub">
+          Silakan buka tautan ini di HP Anda untuk pengalaman terbaik.
+        </p>
+      </div>
+    </div>
+
+    <!-- MUSIC -->
+    <audio id="bg-music" loop>
+      <source src="asset/music.mpeg" type="audio/mpeg" />
+    </audio>
+
+    <!-- ============================================================
+       COVER PAGE
+       Urutan muncul: foto → bg asset → bunga → teks atas → teks bawah
+       Layout: nama mempelai di atas, tengah kosong (wajah), nama tamu + button di bawah
+  ============================================================ -->
+    <section id="cover">
+      <!-- Layer 1: Foto mempelai – muncul pertama -->
+      <div class="cover-photo" id="cover-photo">
+        
+      </div>
+
+      <!-- Layer 2: Background asset overlay -->
+      <div class="cover-bg" id="cover-bg">
+        <img src="asset/cover.png" alt="Cover Background" />
+      </div>
+
+      <!-- Layer 4a: Bunga atas – full lebar -->
+      <div class="flower-top" id="flower-top-cover">
+        <img src="asset/bungaAtas.png" alt="" />
+      </div>
+
+      <!-- Layer 4b: Bunga sudut bawah kanan -->
+      <div class="flower-bottom-right" id="flower-bottom-cover">
+        <img src="asset/bungaSudutBawah.png" alt="" />
+      </div>
+
+      <!-- Layer 3a: Teks atas – nama mempelai -->
+      <div class="cover-top-text" id="cover-top-text">
+        <p class="cover-label">WALIMATUL 'URS</p>
+        <h1 class="cover-names">Alifa &amp; Akbar</h1>
+      </div>
+
+      <!-- Layer 3b: Teks bawah – nama tamu + tombol -->
+      <div class="cover-bottom-text" id="cover-bottom-text">
+        <div class="cover-recipient">
+          <p class="recipient-to">Kepada Yth</p>
+          <p class="recipient-sub">Bapak/Ibu/Saudara/i</p>
+          <p class="recipient-name"></p>
+        </div>
+        <button id="btn-open" onclick="openInvitation()">
+          <span>Buka Undangan</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       INVITATION CONTENT
+  ============================================================ -->
+    <div id="invitation" class="hidden">
+      <!-- Global Background Fixed -->
+      <div id="global-bg"><img src="foto/Background.png" alt="" /></div>
+
+      <!-- Music Toggle -->
+      <button id="music-btn" onclick="toggleMusic()" title="Toggle Music">
+        <div class="cassette-icon">
+          <svg
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="3"
+              y="8"
+              width="34"
+              height="24"
+              rx="3"
+              stroke="white"
+              stroke-width="2"
+            />
+            <circle cx="13" cy="20" r="4" stroke="white" stroke-width="1.5" />
+            <circle cx="27" cy="20" r="4" stroke="white" stroke-width="1.5" />
+            <circle cx="13" cy="20" r="1.5" fill="white" />
+            <circle cx="27" cy="20" r="1.5" fill="white" />
+            <line
+              x1="17"
+              y1="20"
+              x2="23"
+              y2="20"
+              stroke="white"
+              stroke-width="1.5"
+            />
+            <rect
+              x="16"
+              y="14"
+              width="8"
+              height="4"
+              rx="1"
+              stroke="white"
+              stroke-width="1.5"
+            />
+          </svg>
+        </div>
+      </button>
+
+      <!-- ---- Section: Opening (Page 1) ---- -->
+      <!-- Layout: nama mempelai di atas, foto di tengah, kutipan di bawah -->
+      <section id="section-opening" class="page page-opening">
+        <div class="opening-photo">
+          <img src="foto/foto1.png" alt="Foto Mempelai" />
+        </div>
+        <div class="opening-overlay"></div>
+
+        <!-- Bunga atas -->
+        <div class="flower-top-opening">
+          <img src="asset/bungaAtas.png" alt="" />
+        </div>
+
+        <!-- Teks atas: nama mempelai -->
+        <div class="opening-top-content">
+          <p class="opening-label">Wedding Invitation</p>
+          <h1 class="opening-name1">Alifa</h1>
+          <h2 class="opening-and">&amp;</h2>
+          <h1 class="opening-name2">Akbar</h1>
+          <p class="opening-date">Sabtu, 4 Juli 2026</p>
+        </div>
+      </section>
+
+      <!-- ---- Opening Page 2: Ayat & Doa ---- -->
+      <section id="section-opening2" class="page page-opening2">
+        <!-- Layer 1: Foto -->
+        <div class="op2-photo">
+          <img src="foto/foto2.jpeg" alt="Foto Mempelai" />
+        </div>
+
+        <!-- Layer 2: Overlay putih 30% -->
+        <div class="op2-overlay"></div>
+
+        <!-- Layer 3: Konten teks -->
+        <div class="op2-content">
+          <!-- Bismillah -->
+          <div class="op2-block" data-delay="0">
+            <p class="op2-arabic bismillah">
+              بسم الله الرحمن الرحيم
+            </p>
+          </div>
+
+          <!-- Doa nikah Arabic -->
+          <div class="op2-block" data-delay="1">
+            <p class="op2-arabic doa-arabic">
+              وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
+              لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً
+              وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لايٰتٍ
+              لِّقَوْمٍ يَّتَفَكَّرُوْنَ۝٢١
+            </p>
+          </div>
+
+          <!-- Garis pemisah -->
+          <div class="op2-block" data-delay="2">
+            <div class="op2-divider"></div>
+          </div>
+
+          <!-- Ayat Al-Qur'an (QS. Ar-Rum: 21) -->
+          <div class="op2-block" data-delay="3">
+            <p class="op2-quran-text">
+              "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untuk kalian
+              pasangan hidup dari jenis kalian sendiri, agar kalian memperoleh ketenangan dan
+              kedamaian dengannya, dan Dia menjadikan di antara kalian cinta yang mendalam dan
+              kasih sayang penuh rahmat. Sungguh pada hal itu terdapat tanda-tanda bagi kaum yang berpikir."
+            </p>
+            <p class="op2-quran-source">— QS. Ar-Rum: 21 —</p>
+          </div>
+
+          <!-- Teks pengantar -->
+          <div class="op2-block" data-delay="4">
+            <div class="op2-divider-thin"></div>
+            <p class="op2-intro">
+              Dengan memohon rahmat dan ridho Allah SWT,<br />
+              kami mengundang Bapak/Ibu/Saudara/i pada acara pernikahan kami.
+            </p>
+          </div>
+        </div>
+        <!-- end op2-content -->
+      </section>
+      <!-- ---- End Opening Page 2 ---- -->
+
+      <!-- ---- Section: Couple ---- -->
+      <section id="section-couple" class="page page-couple">
+        <!-- Overlay hitam 50% seluruh section couple -->
+        <div class="couple-overlay-full"></div>
+
+        <!-- ===== LAYAR 1: MEMPELAI WANITA ===== -->
+        <div class="couple-screen couple-screen-bride">
+          <!-- Teks: rata kanan, di atas -->
+          <div
+            class="couple-text-block couple-text-top-right reveal-2way enter-bottom"
+          >
+            <p class="couple-role">Mempelai Wanita</p>
+            <h2 class="couple-name">Alifa Nurul Fajrika</h2>
+            <p class="couple-parents">
+              Putri pertama dari<br />
+              Bapak Hermanto dan Ibu Iin Gusrini
+            </p>
+            
+          </div>
+
+          <!-- Foto wanita – di tengah, melengkung -->
+          <div
+            class="couple-card reveal-2way enter-bottom"
+            style="transition-delay: 0.12s"
+          >
+            <img src="foto/foto4.jpeg" alt="Mempelai Wanita" />
+          </div>
+        </div>
+
+        <!-- Simbol & di antara dua layar -->
+        <div class="couple-ampersand">&amp;</div>
+
+        <!-- ===== LAYAR 2: MEMPELAI PRIA ===== -->
+        <div class="couple-screen couple-screen-groom">
+          <!-- Foto pria – di tengah atas, melengkung -->
+          <div class="couple-card reveal-2way enter-bottom">
+            <img src="foto/foto5.jpeg" alt="Mempelai Pria" />
+          </div>
+
+          <!-- Teks: rata kiri, di bawah -->
+          <div
+            class="couple-text-block couple-text-bottom-left reveal-2way enter-bottom"
+            style="transition-delay: 0.12s"
+          >
+            <p class="couple-role">Mempelai Pria</p>
+            <h2 class="couple-name">Muhammad Rezki Akbar</h2>
+            <p class="couple-parents">
+              Putra kedua dari<br />
+              Bapak Tosril dan Ibu Putri Yenti
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- Section: Event ---- -->
+      <section id="section-event" class="page page-event">
+        <!-- BAGIAN 1: COUNTDOWN (setengah layar) -->
+        <div class="event-countdown">
+          <!-- Foto background -->
+          <div class="event-cd-photo">
+            <img src="foto/foto6.jpeg" alt="" />
+          </div>
+          <!-- Overlay hitam 50% -->
+          <div class="event-cd-overlay"></div>
+          <!-- Konten countdown -->
+          <div class="event-cd-content reveal-2way enter-bottom">
+            <p class="event-cd-label">COUNTDOWN</p>
+            <p class="event-cd-date">Sabtu, 4 Juli 2026</p>
+            <div class="event-cd-boxes">
+              <div class="cd-box">
+                <span id="cd-hari">00</span>
+                <p>Hari</p>
+              </div>
+              <div class="cd-box">
+                <span id="cd-jam">00</span>
+                <p>Jam</p>
+              </div>
+              <div class="cd-box">
+                <span id="cd-menit">00</span>
+                <p>Menit</p>
+              </div>
+              <div class="cd-box">
+                <span id="cd-detik">00</span>
+                <p>Detik</p>
+              </div>
+            </div>
+            <button class="event-cd-btn" onclick="simpanKalender()">
+              Simpan di Kalender
+            </button>
+          </div>
+        </div>
+
+        <!-- BAGIAN 2: RINCIAN ACARA (2 layar) -->
+        <div class="event-detail">
+          <!-- Kapsul hitam 70% di tengah -->
+          <div class="event-capsule reveal-2way enter-bottom">
+            <!-- Akad Nikah (tanpa tempat, alamat, dan button lokasi) -->
+            <div class="event-acara">
+              <div class="event-acara-content">
+                <h3 class="acara-title">Akad Nikah</h3>
+                <p class="acara-bulan">SABTU</p>
+                <div class="acara-tgl-row">
+                  <span class="acara-hari">JULI</span>
+                  <span class="acara-tgl">4</span>
+                  <span class="acara-tahun">2026</span>
+                </div>
+                <p class="acara-jam">09.00 WIB</p>
+                <div class="acara-divider"></div>
+                <p class="acara-tempat">Masjid Agung Nurul Falah</p>
+                <p class="acara-alamat">
+                  Lubuk Basung
+              </div>
+            </div>
+
+            <div class="event-acara-sep"></div>
+
+            <!-- Resepsi (dengan tempat, alamat, button, dan preview maps) -->
+            <div class="event-acara event-acara-resepsi">
+              <div class="event-acara-content">
+                <h3 class="acara-title">Resepsi</h3>
+                <p class="acara-bulan">SABTU</p>
+                <div class="acara-tgl-row">
+                  <span class="acara-hari">JULI</span>
+                  <span class="acara-tgl">4</span>
+                  <span class="acara-tahun">2026</span>
+                </div>
+                <p class="acara-jam-2">13.00 - 16.30 WIB</p>
+                <div class="acara-divider"></div>
+                <p class="acara-tempat">Kediaman Mempelai Wanita</p>
+                <p class="acara-alamat">
+                  Ps. Padang Baru, Kec. Lubuk Basung, Kab. Agam (Alkaline Elektronik)
+                </p>
+                <a
+                  class="acara-maps-btn"
+                  href="https://maps.app.goo.gl/AF75sYBj4dfF7Ge59"
+                  target="_blank"
+                  >Buka di Google Maps</a
+                >
+              </div>
+              <!-- Preview Maps - setengah kapsul bawah -->
+              <div class="acara-maps-preview">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.759368203262!2d100.03113257349514!3d-0.31146653533451113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd50dfc3d6331a7%3A0xf5a701abee54d476!2sToko%20Alkaline%20elektronik!5e0!3m2!1sid!2sid!4v1781782855856!5m2!1sid!2sid"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+        <!-- ===== SUB-SECTION: WEDDING WISH ===== -->
+        <div id="section-wedding-wish" class="wish-section">
+          <!-- Layer 1: Overlay hitam 50% (tanpa foto, global-bg terlihat) -->
+          <div class="wish-overlay"></div>
+
+          <!-- Layer 2: Konten -->
+          <div class="wish-content">
+            <!-- Judul -->
+            <div class="ww-reveal" data-ww="0">
+              <p class="wish-label">Send Blessing</p>
+              <h2 class="wish-title">Wedding Wish</h2>
+              <div class="wish-title-line"></div>
+            </div>
+
+            <!-- Deskripsi -->
+            <p class="wish-desc ww-reveal" data-ww="1">
+              Kirimkan doa dan harapan terbaik untuk kami :
+            </p>
+
+            <!-- Form -->
+            <div class="wish-form ww-reveal" data-ww="2">
+              <input
+                type="text"
+                id="wish-name"
+                class="wish-input"
+                placeholder="Nama Anda"
+                maxlength="60"
+              />
+              <!-- Custom Dropdown Kehadiran -->
+              <div
+                class="wish-dropdown"
+                id="wish-dropdown"
+                onclick="toggleDropdown()"
+              >
+                <span class="wish-dropdown-label" id="wish-dropdown-label"
+                  >Pilih Kehadiran Anda</span
+                >
+                <span class="wish-dropdown-arrow" id="wish-dropdown-arrow">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <div class="wish-dropdown-menu" id="wish-dropdown-menu">
+                  <div
+                    class="wish-dropdown-item"
+                    data-value=""
+                    onclick="selectAttend(event, '', 'Pilih Kehadiran Anda')"
+                  >
+                    Pilih Kehadiran Anda
+                  </div>
+                  <div
+                    class="wish-dropdown-item"
+                    data-value="hadir"
+                    onclick="selectAttend(event, 'hadir', '✓  Hadir')"
+                  >
+                    ✓ Hadir
+                  </div>
+                  <div
+                    class="wish-dropdown-item"
+                    data-value="tidak"
+                    onclick="selectAttend(event, 'tidak', '✗  Tidak Hadir')"
+                  >
+                    ✗ Tidak Hadir
+                  </div>
+                </div>
+              </div>
+              <!-- Hidden value holder -->
+              <input type="hidden" id="wish-attend" value="" />
+              <textarea
+                id="wish-msg"
+                class="wish-textarea"
+                placeholder="Tulis ucapan anda . . ."
+                rows="4"
+                maxlength="300"
+              ></textarea>
+              <button class="wish-send-btn" onclick="kirimUcapan()">
+                Kirim
+              </button>
+            </div>
+
+          
+
+            <!-- Daftar Pesan -->
+            <div class="wish-messages ww-reveal" data-ww="4">
+              <div id="wish-list" class="wish-list">
+                <!-- pesan diisi oleh JS -->
+              </div>
+
+              <!-- Pagination seperti Google tapi cantik -->
+              <div class="wish-pagination" id="wish-pagination"></div>
+            </div>
+
+            <!-- Penutup undangan -->
+            <div class="wish-closing ww-reveal" data-ww="5">
+              <div class="wish-closing-inner">
+                <h2 class="wish-title">Doa Untuk Pengantin</h2>
+              <div class="wish-title-line"></div>
+                <!-- Doa Arab: Barakallahu lana wa lakum -->
+                <p class="wish-closing-arabic">
+                  بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ <br />
+                  وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                </p>
+                <p class="wish-closing-arabic-latin">
+                  Semoga Allah menganugerahkan keberkahan untukmu,
+                  melimpahkan keberkahan atas seluruh kehidupanmu
+                  dan mempersatukan kalian berdua dalam segala bentuk kebaikan
+                </p>
+                <p class="op2-quran-source">— Sunan Abi Dawud —</p>
+
+                <div class="wish-closing-line"></div>
+
+                <!-- Nama & tanggal -->
+                <p class="wish-closing-names">Akbar &amp; Alifa</p>
+                <p class="wish-closing-sub">4 Juli 2026</p>
+
+                <!-- Foto pengantin -->
+                <div class="wish-closing-photo">
+                  <img src="foto/RomanticPic.jpeg" alt="Foto Pengantin" />
+                </div>
+
+                <div class="wish-closing-line"></div>
+
+                <!-- Teks penutup pilihan 3 -->
+                <p class="wish-closing-text">
+                  Terima kasih telah menjadi bagian dari hari istimewa kami.
+                  Semoga doa yang Anda titipkan menjadi jalan bagi kebahagiaan dan keberkahan
+                  yang terus mengiringi kehidupan kami di dunia hingga akhirat.
+                </p>
+
+                <!-- Credit -->
+                <p class="wish-closing-credit">Made with Love by Rezki Akbar</p>
+              </div>
+            </div>
+          </div>
+          <!-- end wish-content -->
+        </div>
+        <!-- end wish-section -->
+      </section>
+
+      <!-- ============ BOTTOM NAV BAR ============ -->
+      <nav id="bottom-nav">
+        <button
+          class="nav-btn active"
+          data-target="section-opening"
+          onclick="scrollToSection('section-opening', this)"
+        >
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 21V12h6v9"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="nav-label">Opening</span>
+        </button>
+        <button
+          class="nav-btn"
+          data-target="section-couple"
+          onclick="scrollToSection('section-couple', this)"
+        >
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21C12 21 4 15.5 4 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.5 12 21 12 21z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="nav-label">Couple</span>
+        </button>
+        <button
+          class="nav-btn"
+          data-target="section-event"
+          onclick="scrollToSection('section-event', this)"
+        >
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="18"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+              <path d="M3 9h18" stroke="currentColor" stroke-width="1.8" />
+              <path
+                d="M8 2v4M16 2v4"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+              <circle cx="8" cy="14" r="1" fill="currentColor" />
+              <circle cx="12" cy="14" r="1" fill="currentColor" />
+              <circle cx="16" cy="14" r="1" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="nav-label">Event</span>
+        </button>
+        <button
+          class="nav-btn"
+          data-target="section-wedding-wish"
+          onclick="scrollToSection('section-wedding-wish', this)"
+        >
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3c-1 2-4 3.5-4 7a4 4 0 0 0 8 0c0-3.5-3-5-4-7z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8 17c-2.5.5-4 1.5-4 2.5C4 21 7.6 22 12 22s8-1 8-2.5c0-1-1.5-2-4-2.5"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span class="nav-label">Blessing</span>
+        </button>
+      </nav>
+    </div>
+    <!-- end #invitation -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
