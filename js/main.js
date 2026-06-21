@@ -718,7 +718,6 @@ function renderWishList(wishes) {
       <div class="wish-card-top">
         <span class="wish-card-name">${escHtml(item.nama)}</span>
       </div>
-      <span class="wish-card-badge ${isHadir ? "hadir" : "tidak"}">${isHadir ? "✓ Hadir" : "✗ Tidak Hadir"}</span>
       <p class="wish-card-msg">${escHtmlBr(item.pesan)}</p>
     `;
     list.appendChild(card);
